@@ -1,7 +1,7 @@
 
     url=$1
     echo $url > var; sed 's/https\?:\/\///g' var >> var
-    sed '1d' var1 | tee var
+    sed '1d' var1 | cut -d '/' -f 1 | tee var
     url=$(cat var)
     
     if [ ! -d "$url" ];then
