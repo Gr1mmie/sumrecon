@@ -63,8 +63,8 @@
     for domain in $(cat $url/recon/3rd-lvl-domains.txt);do sublist3r -d $domain -o $url/recon/3rd-lvls/$domain.txt;done
     
     echo "[+] Probing for alive domains..."
-    cat $url/recon/final.txt | sort -u | httprobe -s -p https:443 | sed 's/https\?:\/\///' | tr -d ':443' >> $url/recon/httprobe/alive.txt
-    sort -u $url/recon/httprobe/alive.txt
+    cat $url/recon/final.txt | sort -u | httprobe -s -p https:443 | sed 's/https\?:\/\///' | tr -d ':443' | sort -u >> $url/recon/httprobe/alive.txt
+    sort -u $url/
     echo "[+] Checking for possible subdomain takeover..."
     if [ ! -f "$url/recon/potential_takeovers/domains.txt" ];then
         touch $url/recon/potential_takeovers/domains.txt
@@ -127,4 +127,4 @@
     nmap -iL $url/recon/httprobe/alive.txt -T4 -oA $url/recon/scans/scanned.txt
     
     echo "[+] Running eyewitness against all compiled domains..."
-    python3 EyeWitness/EyeWitness.py --web -f $url/recon/httprobe/alive.txt -d $url/recon/eyewitness --resolve
+    python3 EyeWitness/EyeWitness.py --web -f $url/recon/httprobe/alive.txt -d $url/recon/eyewitness --resolve -no-report
