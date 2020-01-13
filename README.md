@@ -1,3 +1,3 @@
 # sumrecon
 
-script I built upon courtesy of @hmavericadams
+script I built upon courtesy of @hmaverickadams
