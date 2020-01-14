@@ -1,9 +1,10 @@
 
     url=$1
-    echo $url > var; sed 's/https\?:\/\///g' var >> var1
-    sed '1d' var1 | cut -d '/' -f 1 | tee var
-    url=$(cat var)
     
+#    echo $url > var; sed 's/https\?:\/\///g' var >> var1
+#    sed '1d' var1 | cut -d '/' -f 1 | tee var
+#    url=$(cat var)
+ 
     if [ ! -d "$url" ];then
         mkdir $url
     fi
