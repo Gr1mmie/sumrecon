@@ -36,7 +36,6 @@
         exit 1
     fi
     
-    
     if [ ! -x "$(command -v eyewitness)" ]; then
         echo "[-] eyewitness required to run script"
         exit 1
