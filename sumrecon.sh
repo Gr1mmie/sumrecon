@@ -5,6 +5,43 @@
 #    sed '1d' var1 | cut -d '/' -f 1 | tee var
 #    url=$(cat var)
  
+    if [ ! -x "$(command -v assetfinder)" ]; then
+        echo "[-] assetfinder required to run script"
+        exit 1
+    fi
+    
+    if [ ! -x "$(command -v amass)" ]; then
+        echo "[-] amass required to run script"
+        exit 1
+    fi
+    
+    if [ ! -x "$(command -v sublist3r)" ]; then
+        echo "[-] sublist3r required to run script"
+        exit 1
+    fi
+ 
+ 
+    if [ ! -x "$(command -v httprobe)" ]; then
+        echo "[-] httprobe required to run script"
+        exit 1
+    fi
+    
+    if [ ! -x "$(command -v waybackurls)" ]; then
+        echo "[-] waybackurls required to run script"
+        exit 1
+    fi
+    
+    if [ ! -x "$(command -v whatweb)" ]; then
+        echo "[-] whatweb required to run script"
+        exit 1
+    fi
+    
+    
+    if [ ! -x "$(command -v eyewitness)" ]; then
+        echo "[-] eyewitness required to run script"
+        exit 1
+    fi
+    
     if [ ! -d "$url" ];then
         mkdir $url
     fi
