@@ -2,6 +2,8 @@
 
 script I built upon courtesy of @hmaverickadams
 
+Has been tested only on kali.
+
 ## DEPENDENCIES
 * assetfinder - https://github.com/tomnomnom/assetfinder
 * amass - https://github.com/tomnomnom/assetfinder
