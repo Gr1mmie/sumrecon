@@ -2,7 +2,7 @@
 
 script I built upon courtesy of @hmaverickadams
 
-Has been tested only on kali.
+Has been tested only on kali. To be run in root directory
 
 ## DEPENDENCIES
 * assetfinder - https://github.com/tomnomnom/assetfinder
