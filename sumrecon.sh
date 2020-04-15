@@ -19,7 +19,11 @@
         echo "[-] sublist3r required to run script"
         exit 1
     fi
- 
+
+    if [ ! -x "$(find / -type f -name 'EyeWitness')" ];then
+        echo "[-] Eyewitness required to run script"
+        exit 1
+    fi
  
     if [ ! -x "$(command -v httprobe)" ]; then
         echo "[-] httprobe required to run script"
