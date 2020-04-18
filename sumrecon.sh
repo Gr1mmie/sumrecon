@@ -164,4 +164,4 @@
     
     echo "[+] Running eyewitness against all compiled domains..."
     eyewitness=$(find / -type f -name 'EyeWitness.py')
-    python3 $eyewitness --web -f $url/recon/httprobe/alive.txt -d $url/recon/eyewitness --resolve --no-report
+    python3 $eyewitness --web -f $url/recon/httprobe/alive.txt -d $url/recon/eyewitness --resolve --no-prompt
