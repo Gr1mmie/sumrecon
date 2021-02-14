@@ -16,6 +16,16 @@
         exit 1
     fi
     
+    if [ ! -x "$(command -v certspotter)" ]; then
+        echo "[-] certspotter required to run script"
+        exit 1
+    fi
+    
+    if [ ! -x "$(command -v subjack)" ]; then
+        echo "[-] subjack required to run script"
+        exit 1
+    fi
+    
     if [ ! -x "$(command -v sublist3r)" ]; then
         echo "[-] sublist3r required to run script"
         exit 1
