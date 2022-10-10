@@ -12,4 +12,4 @@ Has been tested on Ubuntu. To be run in any directory
 * waybackurls - https://github.com/tomnomnom/waybackurls
 * whatweb - https://github.com/urbanadventurer/WhatWeb
 * nmap - https://nmap.org/download.html
-* eyewitness - https://github.com/FortyNorthSecurity/EyeWitness
+* gowitness - https://github.com/sensepost/gowitness
