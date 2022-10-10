@@ -1,8 +1,8 @@
 # sumrecon
 
 script @Gr1mmie built upon courtesy of @hmaverickadams
-and was edited by me.
-Has been tested only on Ubuntu. To be run in any directory
+and was edited by me.<br>
+Has been tested on Ubuntu. To be run in any directory
 
 ## DEPENDENCIES
 * assetfinder - https://github.com/tomnomnom/assetfinder
