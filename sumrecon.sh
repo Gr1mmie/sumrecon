@@ -16,7 +16,10 @@
         echo "[-] sublist3r required to run script"
         exit 1
     fi
-
+    if [ ! -x "$(command -v gowitness)" ]; then
+        echo "[-] gowitness required to run script"
+        exit 1
+    fi
  
     if [ ! -x "$(command -v httprobe)" ]; then
         echo "[-] httprobe required to run script"
@@ -32,11 +35,7 @@
         echo "[-] whatweb required to run script"
         exit 1
     fi
-    if [ ! -x "$(command -v waybackurls)" ]; then
-        echo "[-] waybackurls required to run script"
-        exit 1
-    fi
-
+    
     if [ ! -d "$pwd/$url" ];then
         mkdir $pwd/$url
     fi
@@ -58,7 +57,6 @@
     if [ ! -d "$pwd/$url/recon/wayback" ];then
         mkdir $pwd/$url/recon/wayback
     fi
-    
     if [ ! -d "$pwd/$url/recon/wayback/params" ];then
         mkdir $pwd/$url/recon/wayback/params
     fi
@@ -68,6 +66,10 @@
     if [ ! -d "$pwd/$url/recon/whatweb" ];then
         mkdir $pwd/$url/recon/whatweb
     fi
+    if [ ! -d "$pwd/$url/recon/gowitness" ];then
+        mkdir $pwd/$url/recon/gowitness
+    fi
+
     if [ ! -f "$pwd/$url/recon/httprobe/alive.txt" ];then
         touch $pwd/$url/recon/httprobe/alive.txt
     fi
@@ -160,6 +162,5 @@
     echo "[+] Scanning for open ports..."
     nmap -iL $pwd/$url/recon/httprobe/alive.txt -T4 -oA $pwd/$url/recon/scans/scanned.txt
     
-    echo "[+] Running eyewitness against all compiled domains..."
-    eyewitness=$(find / -type f -name 'EyeWitness.py')
-    python3 $eyewitness --web -f $pwd/$url/recon/httprobe/alive.txt -d $pwd/$url/recon/eyewitness --resolve --no-prompt
+    echo "[+] Running gowitness against all compiled domains..."
+    gowitness file -f $pwd/$url/recon/httprobe/alive.txt -D $pwd/$url/recon/gowitness/gowitness.sqlite3  -P $pwd/$url/recon/gowitness/Screenshots
